@@ -23,5 +23,6 @@ title: "Paper 1: 底层如何设计：避免“底层之殇”的文化研究"
 
 ## 获取论文
 
-- [点击下载 PDF](paper1.pdf)
 - [在线预览 HTML](paper1.html)
+- [点击下载 PDF](paper1.pdf)
+
