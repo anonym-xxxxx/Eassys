@@ -1,10 +1,172 @@
----
-layout: default
-title: "My Eassys Home"
----
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Eassys Directory</title>
 
-# 我的论文主页
+  <!-- Google Fonts 示例，可根据需要替换/删除 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-欢迎来到我的论文库，这里列出所有文章：
-- [论文1](paper1.md)
-- [论文2](paper2.md)
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --link-color: #2c6ab6;
+      --link-hover-color: #18548b;
+      --accent-color: #464646; /* 复古点 */
+      --sidewidth: 80px; /* 左侧竖栏宽度 */
+      --max-content-width: 800px; /* 主内容最大宽度 */
+      --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif; /*现代字体*/
+    }
+
+    body {
+      margin: 0; 
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-body);
+    }
+
+    /* 整体布局：左侧菜单(固定宽度) + 右侧内容(自适应) */
+    .layout {
+      display: flex;
+      min-height: 100vh;  /* 让页面至少占满一屏 */
+    }
+    .sidebar {
+      width: var(--sidewidth);
+      background: url("sidebar-image.png") no-repeat top/cover;
+      /* 如果想要纯色，可改成 background-color: #f0f0f0; */
+    }
+    .main-content {
+      flex: 1; /* 占据剩余宽度 */
+      max-width: 100%; /* Mobile-friendly */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* 水平居中内容 */
+      padding: 20px;
+    }
+
+    /* 宽度限制 + 主要容器 */
+    .content-wrapper {
+      max-width: var(--max-content-width);
+      width: 100%;
+    }
+
+    /* 顶部大标题区 */
+    .header-banner {
+      width: 100%;
+      height: 80px;
+      background: url("banner.gif") no-repeat center/contain;
+      /* 你可以改成 background-color 或者文字logo */
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin: 0 0 1rem 0;
+      font-size: 1.6rem;
+      line-height: 1.2;
+    }
+
+    .intro-text {
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    /* 目录列表 */
+    .essay-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+    }
+    .essay-list li {
+      margin: 0.5rem 0;
+    }
+    .essay-list a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .essay-list a:hover {
+      color: var(--link-hover-color);
+      text-decoration: underline;
+    }
+
+    /* 页脚示例 */
+    .footer {
+      margin-top: auto; /*将footer推到页面底部*/
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--accent-color);
+    }
+
+    /* 响应式移动端处理 */
+    @media(max-width: 600px) {
+      .layout {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        height: 120px; /* 可以设定个固定高度 */
+        background-position: center;
+        background-size: cover;
+      }
+      .header-banner {
+        height: 60px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="layout">
+  <!-- 左侧 竖栏(类似PaulGraham) -->
+  <div class="sidebar"></div>
+
+  <!-- 右侧 主体内容 -->
+  <div class="main-content">
+    <div class="content-wrapper">
+      <!-- 顶部大标题图 -->
+      <div class="header-banner"></div>
+
+      <h1>我的论文目录 (Modern Style)</h1>
+      <p class="intro-text">
+        欢迎来到我的论文列表！下方列出了所有可访问的文章/论文，点击对应链接就能看到更详细的介绍页面与PDF下载。
+        <br><br>
+        （此示例页面同时借鉴了 Paul Graham 的左侧竖栏布局，以及更现代的响应式设计。）
+      </p>
+
+      <ul class="essay-list">
+        <li>
+          <a href="paper1.md">论文 1: 智能制造与智能服务</a>
+        </li>
+        <li>
+          <a href="paper2.md">论文 2: AI 生产函数</a>
+        </li>
+        <li>
+          <a href="paper3.md">论文 3: 全球价值链重构</a>
+        </li>
+        <li>
+          <a href="paper4.md">论文 4: 数据与算力时代</a>
+        </li>
+        <!-- 根据需要，继续添加更多 -->
+      </ul>
+
+      <!-- 也可以加一个“RSS” 或 “关于本站”链接之类 -->
+      <p>
+        <a href="rss.html">RSS Feed</a> | 
+        <a href="https://github.com/anonym-xxxx/Eassys/">View on GitHub</a>
+      </p>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      &copy; 2025 anonym-xxxxx. All rights reserved.
+    </footer>
+  </div><!-- /main-content -->
+</div><!-- /layout -->
+</body>
+</html>
